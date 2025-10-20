@@ -1,0 +1,1 @@
+netlify deploy --prod --dir=d:\Company\speedparts-static

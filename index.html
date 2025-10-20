@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeedParts - Your Local Auto Parts Source</title>
+    <meta name="description" content="Your reliable source for new and used vehicle spare parts. Quality parts, great prices, and fast service.">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚗</text></svg>">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Premium Vehicle Spare Parts</h1>
+            <p class="hero-subtitle">Quality parts for every vehicle. Fast delivery, expert advice, unbeatable prices.</p>
+            <a href="#products" class="button primary hero-cta">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="Engine Parts">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&h=300&fit=crop" alt="Engine Parts">
+                    <h3>Engine Parts</h3>
+                </div>
+                <div class="category-card" data-category="Braking System">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Braking System">
+                    <h3>Braking System</h3>
+                </div>
+                <div class="category-card" data-category="Electrical">
+                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop" alt="Electrical">
+                    <h3>Electrical</h3>
+                </div>
+                <div class="category-card" data-category="Filters">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop" alt="Filters">
+                    <h3>Filters</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products" id="products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div id="product-grid" class="product-grid">
+                <!-- Products will be injected here by JavaScript -->
+            </div>
+            <div id="no-results" class="no-results" style="display: none;">
+                <h3>No products found</h3>
+                <p>Try adjusting your search or filter criteria.</p>
+            </div>
+        </div>
+    </section>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">SpeedParts</a>
+            <nav class="main-nav">
+                <div class="search-wrapper">
+                    <input type="search" id="search-input" placeholder="Search by name, part #, make...">
+                </div>
+                <div class="filter-controls">
+                    <select id="filter-make" aria-label="Filter by make">
+                        <option value="">All Makes</option>
+                    </select>
+                    <select id="filter-model" aria-label="Filter by model">
+                        <option value="">All Models</option>
+                    </select>
+                    <select id="filter-year" aria-label="Filter by year">
+                        <option value="">All Years</option>
+                    </select>
+                    <select id="filter-category" aria-label="Filter by category">
+                        <option value="">All Categories</option>
+                        <option value="Engine Parts">Engine Parts</option>
+                        <option value="Braking System">Braking System</option>
+                        <option value="Electrical">Electrical</option>
+                        <option value="Filters">Filters</option>
+                    </select>
+                    <select id="filter-condition" aria-label="Filter by condition">
+                        <option value="">All Conditions</option>
+                        <option value="new">New</option>
+                        <option value="used">Used</option>
+                    </select>
+                </div>
+                <button id="cart-button" class="cart-button" aria-label="Open cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M17.21 9l-4.38-6.56a1 1 0 00-.83-.44H8a1 1 0 00-.83.44L2.79 9H2a1 1 0 00-1 1v10a2 2 0 002 2h18a2 2 0 002-2V10a1 1 0 00-1-1h-.79zM9 4h6l3 4.5H6L9 4zM21 20H3V11h18v9z"></path><path d="M12 15a3 3 0 100-6 3 3 0 000 6zm0-4a1 1 0 110 2 1 1 0 010-2z"></path></svg>
+                    <span id="cart-badge" class="cart-badge">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="modal" hidden>
+        <div class="modal-overlay" tabindex="-1">
+            <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+                <!-- Content injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="drawer" hidden>
+        <div class="drawer-overlay" tabindex="-1">
+            <div class="drawer-content" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title">
+                <div class="drawer-header">
+                    <h2 id="cart-drawer-title">Your Cart</h2>
+                    <button id="close-cart-button" class="close-button" aria-label="Close cart">&times;</button>
+                </div>
+                <div id="cart-items" class="cart-items">
+                    <!-- Cart items injected by JS -->
+                </div>
+                <div id="cart-empty" class="cart-empty" style="display: none;">
+                    <p>Your cart is empty.</p>
+                </div>
+                <div class="drawer-footer">
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="cart-subtotal">GHS 0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping:</span>
+                            <span>Calculated at checkout</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span id="cart-total">GHS 0.00</span>
+                        </div>
+                    </div>
+                    <button id="checkout-button" class="button primary" disabled>Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal" hidden>
+        <div class="modal-overlay" tabindex="-1">
+            <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+                <div class="modal-header">
+                    <h2 id="checkout-title">Checkout</h2>
+                    <button class="close-button" aria-label="Close checkout">&times;</button>
+                </div>
+                <form id="checkout-form" class="checkout-form">
+                    <div class="form-group">
+                        <label for="customer-name">Full Name</label>
+                        <input type="text" id="customer-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-phone">Phone Number</label>
+                        <input type="tel" id="customer-phone" name="phone" required placeholder="e.g., 0241234567">
+                    </div>
+                    <div class="form-group">
+                        <label>Delivery Method</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="deliveryMethod" value="pickup" checked> Pickup</label>
+                            <label><input type="radio" name="deliveryMethod" value="shipping"> Shipping</label>
+                        </div>
+                    </div>
+                    <div id="shipping-address-group" class="form-group" style="display: none;">
+                        <label for="shipping-address">Shipping Address</label>
+                        <textarea id="shipping-address" name="address" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-notes">Optional Notes</label>
+                        <textarea id="order-notes" name="notes" rows="2"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="button primary">Place Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SpeedParts</h3>
+                    <p>Your trusted source for quality vehicle spare parts. We provide genuine parts with fast delivery and expert support.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📞 +233 240 000 000</p>
+                    <p>📧 info@speedparts.com</p>
+                    <p>📍 Accra, Ghana</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SpeedParts. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a id="whatsapp-contact-button" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact seller on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.731 6.086l.001.004 1.427 2.457-1.023 3.746 3.75-1.017.005.002z"></path></svg>
+    </a>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>
