@@ -470,8 +470,8 @@ body {
     transition: var(--transition);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     border: 1px solid var(--border-color);
-    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 .modal:not([hidden]) .modal-content {
     transform: scale(1);
@@ -504,8 +504,8 @@ body {
     cursor: default;
     box-shadow: -10px 0 25px -5px rgba(0, 0, 0, 0.1);
     border-left: 1px solid var(--border-color);
-    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 .drawer:not([hidden]) .drawer-content {
     transform: translateX(0);
@@ -691,8 +691,8 @@ body {
     box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
     transition: var(--transition-slow);
     z-index: 300;
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .toast.show {
